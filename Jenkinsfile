@@ -27,5 +27,10 @@ pipeline {
         sleep 30
       }
     }
+    stage('Deploy') {
+      steps {
+        sleep 30
+      }
+    }
   }
 }
