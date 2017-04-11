@@ -32,5 +32,10 @@ pipeline {
         sleep 30
       }
     }
+    stage('Promote') {
+      steps {
+        sleep 25
+      }
+    }
   }
 }
