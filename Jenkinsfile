@@ -38,4 +38,7 @@ pipeline {
       }
     }
   }
+  environment {
+    Dev = 'Dev'
+  }
 }
