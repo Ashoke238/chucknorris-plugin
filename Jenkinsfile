@@ -42,6 +42,11 @@ pipeline {
         sleep 20
       }
     }
+    stage('Promote INT') {
+      steps {
+        sleep 25
+      }
+    }
   }
   environment {
     Dev = 'Dev'
