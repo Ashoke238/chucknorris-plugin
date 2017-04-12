@@ -37,6 +37,11 @@ pipeline {
         sleep 25
       }
     }
+    stage('QA Test') {
+      steps {
+        sleep 20
+      }
+    }
   }
   environment {
     Dev = 'Dev'
