@@ -3,8 +3,17 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        bat(script: 'echo hi', returnStatus: true)
-        sleep 25
+        parallel(
+          "Checkout": {
+            bat(script: 'echo hi', returnStatus: true)
+            sleep 25
+            
+          },
+          "Dependency": {
+            build 'X'
+            
+          }
+        )
       }
     }
     stage('Build') {
