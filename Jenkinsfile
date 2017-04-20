@@ -33,7 +33,16 @@ pipeline {
     }
     stage('Package') {
       steps {
-        sleep 30
+        parallel(
+          "Package": {
+            sleep 30
+            
+          },
+          "Pakc 2": {
+            bat 'echo "HI"'
+            
+          }
+        )
       }
     }
     stage('Deploy') {
