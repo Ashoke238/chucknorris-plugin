@@ -67,6 +67,7 @@ pipeline {
     }
   }
   environment {
-    Dev = 'Dev'
+    Dev = 'AShoke'
+    QA = 'Vairam'
   }
 }
