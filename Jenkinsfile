@@ -36,6 +36,7 @@ pipeline {
         parallel(
           "Package": {
             sleep 30
+            bat 'echo "hi"'
             
           },
           "Pakc 2": {
