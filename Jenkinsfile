@@ -2,24 +2,33 @@ pipeline {
   agent any
   stages {
     stage('Checkout') {
-      steps {
-        bat(script: 'echo hi', returnStatus: true)
-        sleep 25
+      parallel {
+        stage('Checkout') {
+          steps {
+            bat(script: 'echo hi', returnStatus: true)
+            sleep 25
+          }
+        }
+        stage('input') {
+          steps {
+            input 'ok'
+          }
+        }
       }
     }
     stage('Build') {
-      steps {
-        parallel(
-          "Build": {
+      parallel {
+        stage('Build') {
+          steps {
             bat(script: 'echo hi', returnStatus: true)
             sleep 25
-            
-          },
-          "Analysis": {
-            sleep 50
-            
           }
-        )
+        }
+        stage('Analysis') {
+          steps {
+            sleep 50
+          }
+        }
       }
     }
     stage('Package') {
